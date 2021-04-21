@@ -20,5 +20,5 @@ const makeIngredientsList = (options) => {
 });
 }
 
-const IngredientsList = makeIngredientsList(ingredients);
-ulEl.append(...IngredientsList);
+const ingredientsList = makeIngredientsList(ingredients);
+ulEl.append(...ingredientsList);

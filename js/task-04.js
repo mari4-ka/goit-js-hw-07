@@ -4,8 +4,8 @@ const ButtonIncrementEl = buttonEl[1];
 
 const counterValueEl = document.querySelector('#value');
 
-buttonDecrementEl.addEventListener('click', (onButtonDecrementClick));
-ButtonIncrementEl.addEventListener('click', (onButtonIncrementClick));
+buttonDecrementEl.addEventListener('click', onButtonDecrementClick);
+ButtonIncrementEl.addEventListener('click', onButtonIncrementClick);
 
 let counterValue = 0;
 

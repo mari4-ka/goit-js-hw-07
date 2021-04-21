@@ -1,17 +1,8 @@
-// - Если введено подходящее количество, то border инпута 
-// становится зеленым, если неправильное - красным.
-
-// Для добавления стилей, используй CSS-классы valid и invalid.
-
-// #validation-input {
-//   border: 3px solid #bdbdbd;}
-// #validation-input.valid {
-//   border-color: #4caf50;}
-// #validation-input.invalid {
-//   border-color: #f44336;}
-
 const inputEl = document.querySelector('#validation-input');
 const inputValidationNumber = Number(inputEl.dataset.length);
+inputEl.style.borderColor = '#bdbdbd';
+inputEl.style.borderStyle = 'solid';
+inputEl.style.borderWidth = '3px';
     
 inputEl.addEventListener('focus', onInputFocus);
 inputEl.addEventListener('input', onInputChange);
@@ -26,17 +17,18 @@ function onInputChange(event) {
     const currentValueToCheck = event.currentTarget.value.length;
 
     function onInputBlur() {
+    console.log('blur input');
+
         if (currentValueToCheck === inputValidationNumber) {
             inputEl.classList.add('valid');
             inputEl.classList.remove('invalid');
-        }
-        if (currentValueToCheck === 0) {
+            inputEl.style.borderColor = '#4caf50';
+            console.log('input value:', inputEl.value);
+        } else {
             inputEl.classList.remove('valid');
             inputEl.classList.remove('invalid');
-        }
-        if (currentValueToCheck !== inputValidationNumber && currentValueToCheck !== 0) {
-            inputEl.classList.remove('valid');
-            inputEl.classList.add('invalid');
+            inputEl.style.borderColor = '#f44336';
+            console.log('input value:', inputEl.value);
         }
     }
 }
