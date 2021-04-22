@@ -1,8 +1,5 @@
 const inputEl = document.querySelector('#validation-input');
 const inputValidationNumber = Number(inputEl.dataset.length);
-inputEl.style.borderColor = '#bdbdbd';
-inputEl.style.borderStyle = 'solid';
-inputEl.style.borderWidth = '3px';
     
 inputEl.addEventListener('focus', onInputFocus);
 inputEl.addEventListener('input', onInputChange);
@@ -22,12 +19,10 @@ function onInputChange(event) {
         if (currentValueToCheck === inputValidationNumber) {
             inputEl.classList.add('valid');
             inputEl.classList.remove('invalid');
-            inputEl.style.borderColor = '#4caf50';
             console.log('input value:', inputEl.value);
         } else {
             inputEl.classList.remove('valid');
-            inputEl.classList.remove('invalid');
-            inputEl.style.borderColor = '#f44336';
+            inputEl.classList.add('invalid');
             console.log('input value:', inputEl.value);
         }
     }
